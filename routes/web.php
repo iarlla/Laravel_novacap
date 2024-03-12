@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,27 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-    $nome = "Matheus";
-    $idade = 29;
-    $profissao = "Programador";
-
-    $arr = [1, 2, 3, 4, 5];
-
-    $nomes = ["Pedro", "Tiago", "João", "Matheus"];
-
-    return view(
-        'welcome',
-        [
-            'nome' => $nome,
-            'idade2' => $idade,
-            'profissao' => "programador",
-            'arr' => $arr,
-            'nomes' => $nomes
-        ]
-    );
+    return view('welcome');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__.'/auth.php';

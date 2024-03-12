@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Welcome</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -831,53 +831,8 @@
 </head>
 
 <body>
-    <h1>Curso Laravel - Conhecendo o blade - #04</h1>
+    <h1>Welcome</h1>
 
-    <?php if(10 > 5): ?>
-    <p>A condição é true</p>
-    <?php endif; ?>
-
-    <?php if(10 > 15): ?>
-    <p>A condição é true</p>
-    <?php endif; ?>
-
-    <p><?php echo e($nome); ?></p>
-
-    <?php if($nome == "Pedro"): ?>
-    <p>O nome é Pedro</p>
-    <?php else: ?>
-    <p>O nome não é Pedro</p>
-    <?php endif; ?>
-
-    <?php if($nome == "Pedro"): ?>
-    <p>O nome é Pedro</p>
-    <?php elseif($nome == "Matheus"): ?>
-    <p>Eu sou o Douglas! você não o Douglas!<br>Eu sou o Douglas! você não o Douglas!</p>
-    <?php endif; ?>
-
-    <?php if($nome == "Pedro"): ?>
-    <p>O nome é Pedro</p>
-    <?php elseif($nome == "Matheus"): ?>
-    <p>O nome é <?php echo e($nome); ?>, ele tem <?php echo e($idade2); ?> anos e a profissão dele é <?php echo e($profissao); ?>.</p>
-    <?php endif; ?>
-
-    <?php for($i = 0; $i < count($arr); $i++): ?> <p><?php echo e($arr[$i]); ?> - <?php echo e($i); ?></p>
-        <?php if($i == 2): ?>
-        <p>O i é 2</p>
-        <?php endif; ?>
-        <?php endfor; ?>
-
-        <?php
-        $name = "barquinho";
-        echo $name;
-        ?>
-        <!--Comentario-->
-        
-
-        <?php $__currentLoopData = $nomes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $nome): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <p><?php echo e($loop->index); ?></p>
-        <p><?php echo e($nome); ?></p>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </body>
 
 </html><?php /**PATH C:\tools\php\iarlla\resources\views/welcome.blade.php ENDPATH**/ ?>

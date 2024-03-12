@@ -1,4 +1,11 @@
 <?php return array (
+  'laravel/breeze' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Breeze\\BreezeServiceProvider',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -18,6 +25,13 @@
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'lucascudo/laravel-pt-br-localization' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Lucascudo\\LaravelPtBRLocalization\\LaravelPtBRLocalizationServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
