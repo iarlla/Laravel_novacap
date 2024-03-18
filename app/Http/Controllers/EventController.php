@@ -18,18 +18,23 @@ class EventController extends Controller
     {
         return view('events.create');
     }
-    public function pontos()
+
+    public function store(Request $request)
     {
-        return view('events.pontos');
+        $event = new Event;
+
+        $event->title = $request->title;
+        $event->city = $request->city;
+        $event->private = $request->private;
+        $event->description = $request->description;
+
+        $event->save();
+
+        return redirect('/');
     }
 
     public function login()
     {
         return view('login');
-    }
-
-    public function cadastrar()
-    {
-        return view('cadastrar');
     }
 }

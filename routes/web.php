@@ -19,12 +19,9 @@ use Illuminate\Console\Scheduling\Event;
 Route::get('/', [EventController::class, 'index']);
 
 Route::get('/events/create', [EventController::class, 'create']);
-Route::get('/events/pontos', [EventController::class, 'pontos']);
+Route::post('/events', [EventController::class, 'store']);
 
 Route::get('/login', [EventController::class, 'login']);
-Route::get('/cadastrar', [EventController::class, 'cadastrar']);
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
